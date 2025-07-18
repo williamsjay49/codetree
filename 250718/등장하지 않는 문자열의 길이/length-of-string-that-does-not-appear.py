@@ -2,29 +2,15 @@ N = int(input())
 str = input()
 arr = [0] * 91
 # Please write your code here.
-
-for i in range(N):
-    for j in range(65, 91):
-        if ord(str[i]) != j:
-            continue
-        
-        arr[j] += 1
-
-ans = 0
-for el in str:
-    stop = False
-
-    
-    convEl = ord(el)
-    if arr[convEl] > 1:
-        ans += 1
-    
-    else:
-        stop = True
-        ans += 1
-
-    # print(ans)
-    if stop:
+for i in range(1, N):
+    if str[0] == str[i]:
+        temp = str[i::]
         break
+cnt = 1
+for i in range(len(temp)):
+    if temp[i] != str[i]:
+        break
+    
+    cnt += 1
 
-print(ans)
+print(cnt)
