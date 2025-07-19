@@ -25,7 +25,7 @@ ans = 0
 for i in range(1, n + 1):
     tot = 0
     a = 0
-    for j in range(3):
+    for j in range(m):
         if arr[i] > n or a > n:
             break
 
@@ -33,7 +33,7 @@ for i in range(1, n + 1):
             tot += arr[i]
             a = arr[i]
             continue
-            
+
         tot += arr[a]
         a = arr[a]
 
