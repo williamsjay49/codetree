@@ -24,18 +24,11 @@ arr = [0] + list(map(int, input().split()))
 ans = 0
 for i in range(1, n + 1):
     tot = 0
-    # a = 0
+    a = i
     for j in range(m):
-        # if arr[i] > n or a > n:
-        #     break
-
-        if j == 0:
-            tot += arr[i]
-            a = arr[i]
-            continue
-
         tot += arr[a]
         a = arr[a]
+
 
     ans = max(ans, tot)
 
