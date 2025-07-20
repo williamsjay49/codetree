@@ -1,5 +1,5 @@
 N = int(input())
-seat = input()
+seat = list(input())
 
 # diff = 0
 # start_idx = 0
@@ -17,20 +17,24 @@ seat = input()
 # diff = max(diff, N - 1 - start_idx)
 
 # print(diff)
+
+def min_num():
+    dist = N
+
+    for i in range(N):
+        for j in range(i + 1, N):
+            if seat[i] == '1' and seat[j] == '1':
+                dist = min(dist, j - i)
+
+    return dist
 ans = 0
-start_idx = 0
 for i in range(N):
 
-    if seat[i] == "1":
+    if seat[i] == '0':
+        seat[i] = '1'
 
-        diff = i - start_idx
-        ans = max(diff // 2, ans)
+        ans = max(ans, min_num())
 
-        start_idx = i
-
-# print(start_idx)
-
-diff = N - 1 - start_idx
-ans = max(diff, ans)
+        seat[i] = '0'
 
 print(ans)
