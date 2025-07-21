@@ -25,25 +25,47 @@
 
 #         break
 
-n = int(input())
-ab = [tuple(map(int, input().split())) for _ in range(n)]
+# n=int(input())
+# ab=[
+#     tuple(map(int,input().split()))
+#     for _ in range (n)
+# ]
 
-def in_range(x: int) -> bool:
+# def in_range(x):
+#     for i in range(n):
+#         if ab[i][0] <= 2**(i+1)*x and 2**(i+1)*x <= ab[i][1]:
+#             continue
+#         else:
+#             return False
+#     return True
+
+# ans=[]
+
+# for x in range(1,1000):
+#     if in_range(x):
+#         ans.append(x)
+
+# print(min(ans))
+
+n=int(input())
+ab=[
+    tuple(map(int,input().split()))
+    for _ in range (n)
+]
+
+def in_range(x):
     for i in range(n):
-        val = (2 ** (i + 1)) * x
-        if ab[i][0] <= val <= ab[i][1]:
+        if ab[i][0] <= 2**(i+1)*x and 2**(i+1)*x <= ab[i][1]:
             continue
         else:
             return False
     return True
 
-ans = []
+ans=[]
 
-for x in range(1, 1000):
+for x in range(1,1000):
     if in_range(x):
         ans.append(x)
 
-if ans:
-    print(min(ans))
-else:
-    print("No valid x found")
+print(min(ans))
+
