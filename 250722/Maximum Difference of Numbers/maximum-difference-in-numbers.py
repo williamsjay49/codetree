@@ -3,14 +3,13 @@ arr = [int(input()) for _ in range(N)]
 
 # Please write your code here.
 ans__ = 0
-for i in range(N):
-    ans = [arr[i]]
-    for j in range(i + 1, N):
+for i in range(1, N):
+    cnt = 0
         
+    for el in arr:
+        if i <= el <= K + i:
+            cnt += 1
 
-        if 0 <= arr[j] - arr[i] <= K:
-            ans.append(arr[j])
-
-    ans__ = max(len(ans), ans__)
+    ans__ = max(cnt, ans__)
 
 print(ans__)
