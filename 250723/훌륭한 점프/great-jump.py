@@ -20,9 +20,9 @@ def max_res(val):
 ans = sys.maxsize
 for i in range(n):
 
-    if max_res(arr[i]):
+    if max_res(arr[i]) and i != 0 and i != n - 1:
         temp, arr[i] = arr[i], 0
-
+        # print(arr)
         ans = min(ans, max(arr))
         arr[i] = temp
 
