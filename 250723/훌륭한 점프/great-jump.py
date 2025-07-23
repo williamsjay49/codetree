@@ -1,3 +1,4 @@
+import sys
 n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 
@@ -16,7 +17,7 @@ def max_res(val):
     
     return True
 
-ans = 101
+ans = sys.maxsize
 for i in range(max(arr), min(arr) + 1, -1):
 
     if max_res(i):
