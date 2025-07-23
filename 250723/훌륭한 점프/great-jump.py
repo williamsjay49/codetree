@@ -13,7 +13,7 @@ def is_possible(limit):
             
     return True
 
-for i in range(max(arr[0], arr[1]), 100):
+for i in range(max(arr[0], arr[1]), 101):
     if is_possible(i):
         print(i)
         break
