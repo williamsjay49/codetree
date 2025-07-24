@@ -21,7 +21,7 @@ for i in range(N):
 
             ans = max(ans, min_num())
 
-            seat[j], seat[i] = '0'
+            seat[j] = seat[i] = '0'
 
 print(ans)
 
