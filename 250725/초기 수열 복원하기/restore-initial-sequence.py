@@ -2,56 +2,71 @@ n = int(input())
 adjacent = list(map(int, input().split()))
 
 # Please write your code here.
-ranges = []
-idx = 1
-arr = [0] * n
-for p, el in enumerate(adjacent):
+
+# def is_equal_arr(arr1, arr2):
+#     # temp1 = sorted(arr1)
+#     # temp2 = sorted(arr2)
+
+#     if len(arr1) != len(arr2):
+#         return False
     
-    for i in range(1, n + 1):
-        find = False
+#     for x, y in zip(arr1, arr2):
+#         if x != y:
+#             return False
 
-        for j in range(1, n + 1):
-            # print(abs(el - i), abs(el - j))
-            if abs(el - i) == j and abs(el - j) == i and (i, j) not in ranges:
-                ranges.append((i, j))
-                find = True
-                break
+#     return True
 
-        if find:
+# def find(aa):
+#     global temp
+
+#     for j in range(1, n + 1):
+#         for k in range(1, n + 1):
+#             for l in range(1, n + 1):
+#                 if j == k or j == l or k == l:
+#                     continue
+#                 # print(temp)
+
+#                 if [j, k, l] == temp:
+#                     continue
+
+#                 if is_equal_arr([j + k, k + l], aa):
+#                     temp = [j, k, l]
+#                     return j, k, l
+# ans = []
+# temp = []
+# for i in range(n - 2):
+
+#     arr = [adjacent[i], adjacent[i + 1]]
+#     j, k, l = find(arr)
+#     # print(arr)
+#     print(j, k, l, arr)
+#     # if j not in ans:
+#     #     ans.append(j)
+#     # if k not in ans:
+#     #     ans.append(k)
+#     # if l not in ans:
+#     #     ans.append(l)
+                    
+
+# print(ans)
+
+# n = int(input())
+# adjacent = list(map(int, input().split()))
+
+for first in range(1, n + 1):
+    answer = [0] * n
+    used = [0] * (n + 1)
+    answer[0] = first
+    used[first] = 1
+    valid = True
+
+    for i in range(1, n):
+        answer[i] = adjacent[i - 1] - answer[i - 1]
+        if answer[i] < 1 or answer[i] > n or used[answer[i]]:
+            valid = False
             break
+        used[answer[i]] = 1
 
-def overlap(m):
-    cnt = [ranges[m][0], ranges[m][1], ranges[m+1][0], ranges[m+1][1]]
-
-    for i in range(1, n + 1):
-        if cnt.count(i) == 2:
-            return i
-    
-        
-    
-
-for i in range(n - 2):
-    # print(overlap(i))
-    arr[idx] = overlap(i)
-    idx += 1
-
-a, b = ranges[0]
-c, d = ranges[-1]
-
-if a == arr[1]:
-    arr[0] = b
-
-else:
-    arr[1] = a
-
-if c == arr[n - 2]:
-    arr[n - 1] = d
-
-else:
-    arr[n - 1] = c
-
-for el in arr:
-    print(el, end=" ")
-
-# print(arr)
-               
+    if valid:
+        print(' '.join(map(str, answer)))
+        break
