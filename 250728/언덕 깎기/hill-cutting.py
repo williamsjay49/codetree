@@ -1,3 +1,4 @@
+import sys
 # n 입력
 n = int(input())
 # hills 입력
@@ -6,7 +7,7 @@ hills = [
     for _ in range(n)
 ]
 
-min_cost = 101
+min_cost = sys.maxsize
 for i in range(1, 101):
     cost = 0
     for elem in hills:
