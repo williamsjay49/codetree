@@ -6,7 +6,7 @@ hills = [
     for _ in range(n)
 ]
 
-min_cost = 100
+min_cost = 101
 for i in range(1, 101):
     cost = 0
     for elem in hills:
