@@ -19,7 +19,7 @@ for i in range(1, 10):
         if sub_total > i:
             cnt += 1
             # ans = max(sub_total, ans)
-            sub_total = 0
+            sub_total = a[j]
         
         else:
             maxval = max(sub_total, maxval)
