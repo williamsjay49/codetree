@@ -4,33 +4,26 @@ MAX_NUM = 10000
 n, m = map(int, input().split())
 a = list(map(int, input().split()))
 
-ans = 0
-for i in range(1, 10):
+ans = MAX_NUM
+for i in range(1, MAX_NUM + 1):
+
+    possible = True
+    segment = 1
     cnt = 0
     
-    sub_total = 0
-    maxval = 0
     for j in range(n):
-        if j == 0 and a[j] > i:
+        if a[j] > i:
+            possible = False
             break
 
-        sub_total += a[j]
-        # print((sub_total, a[j], i, cnt),  end=" ")
-        if sub_total > i:
-            cnt += 1
-            # ans = max(sub_total, ans)
-            sub_total = a[j]
+        if cnt + a[j] > i:
+            cnt = 0
+            segment += 1
         
-        else:
-            maxval = max(sub_total, maxval)
+        cnt += a[j]
             
-    # print(maxval, cnt, i)
-    # print()
-    if cnt == (m - 1) and maxval == i:
-        # ans = min(i, ans)
-        ans = max(maxval, ans)
-        # break
-    
+    if possible and segment <= m:
+        ans = min(ans, i)
 
         
 print(ans)
