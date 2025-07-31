@@ -1,8 +1,9 @@
 
+import sys
 n, k = map(int, input().split())
 
 num_list = list(map(int, input().split()))
-ans = 10000
+ans = sys.maxsize
 for i in range(1, 10001):
 
     new_arr = []
