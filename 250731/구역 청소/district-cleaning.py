@@ -4,7 +4,7 @@ c, d = map(int, input().split())
 # Please write your code here.
 ans = 0
 if b < c:
-    print(a - d)
+    print(abs(a - d))
 
 else:
-    print(b - c)
+    print(abs(b - c))
