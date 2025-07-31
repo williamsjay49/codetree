@@ -3,14 +3,12 @@ c, d = map(int, input().split())
 
 # Please write your code here.
 ans = 0
-if b < c:
-    if a > d:
-        ans = abs(a - d)
+if b < c or d < a:
+    print(ans)
+
 else:
-    ans = abs(b - c)
-
-
-print(ans)
+    ans = abs(min(a, c) - max(d, b))
+    print(ans)
 
 
 # print(ans)
