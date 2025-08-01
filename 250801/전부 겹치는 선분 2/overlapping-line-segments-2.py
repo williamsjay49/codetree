@@ -6,7 +6,7 @@ arr = [tuple(map(int, input().split())) for _ in range(n) ]
 
 not_possible = True
 for i in range(n):
-    cnt = 1
+    cnt = 0
     x1, x2 = 0, sys.maxsize
 
     for j in range(n):
@@ -25,6 +25,6 @@ for i in range(n):
 
 
 if not_possible:
-    print("Yes")
-else:
     print("No")
+else:
+    print("Yes")
