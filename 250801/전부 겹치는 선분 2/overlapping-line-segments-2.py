@@ -1,12 +1,13 @@
+import sys
 MAX_N = 100
 n = int(input())
 arr = [tuple(map(int, input().split())) for _ in range(n) ]
 
 
-cnt = 1
-x1, x2 = 0, 101
 not_possible = True
 for i in range(n):
+    cnt = 1
+    x1, x2 = 0, sys.maxsize
 
     for j in range(n):
         if j == i:
