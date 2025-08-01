@@ -3,15 +3,27 @@ n = int(input())
 arr = [tuple(map(int, input().split())) for _ in range(n) ]
 
 
-cnt = 0
-x1, x2 = arr[0][0], arr[0][1]
+cnt = 1
+x1, x2 = 0, 100
+not_possible = True
+for i in range(n):
 
-for i in range(1, n):
-    if x2 < arr[i][0] or arr[i][1] < x1:
-        cnt += 1
+    for j in range(n):
+        if j == i:
+            continue
+            
+        x1 = max(x1, arr[j][0])
+        x2 = min(x2, arr[j][1])
+
+        if x1 <= x2:
+            cnt += 1
 
 # print(cnt)
-if cnt == 1:
+    if cnt == n - 1:
+        not_possible = False
+
+
+if not_possible:
     print("Yes")
 else:
     print("No")
