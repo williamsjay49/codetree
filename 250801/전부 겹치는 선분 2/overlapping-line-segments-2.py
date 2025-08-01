@@ -4,7 +4,7 @@ arr = [tuple(map(int, input().split())) for _ in range(n) ]
 
 
 cnt = 1
-x1, x2 = 0, 100
+x1, x2 = 0, 101
 not_possible = True
 for i in range(n):
 
