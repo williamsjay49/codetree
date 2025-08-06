@@ -8,6 +8,7 @@ dist = sys.maxsize
 dist = min(dist, abs(a - y) + abs(x - b))
 dist = min(dist, abs(a - y) + b)
 dist = min(dist, abs(a - x) + abs(b - y))
+dist = min(dist, abs(a - x) + b)
 dist = min(dist, abs(b - a))
 
 
