@@ -6,8 +6,9 @@ a, b, x, y = map(int, input().split())
 dist = sys.maxsize
 
 dist = min(dist, abs(a - y) + abs(x - b))
-dist = min(dist, abs(a - b) + abs(x - y))
-dist = min(dist, b - a)
+dist = min(dist, abs(a - y) + b)
+dist = min(dist, abs(a - x) + abs(b - y))
+dist = min(dist, abs(b - a))
 
 
 print(dist)
