@@ -3,11 +3,12 @@ a, b, x, y = map(int, input().split())
 
 # Please write your code here.
 
-minVal = min(x, y)
-maxVal = max(x, y)
+minVal = min(abs(a - x), abs(a - y))
+maxVal = min(abs(b - x), abs(b - y))
 
-if abs(a - b) < (abs(a - minVal) + abs(b - maxVal)):
+if abs(a - b) < (minVal + maxVal):
     print(abs(a - b))
 
 else:
-    print(abs(a - minVal) + abs(b - maxVal))
+    print(minVal + maxVal)
+
