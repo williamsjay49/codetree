@@ -10,7 +10,7 @@ for i in range(1, N):
     Found = True
     if int(seats[i]) == 1:
         idx = i
-        dist = (idx + 1 - start) // 2
+        dist = (idx - start) // 2
         # print(dist, idx)
         for j in range(idx + 1, N):
             if int(seats[j]) == 1 and (j - idx) < dist:
