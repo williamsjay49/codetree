@@ -21,7 +21,7 @@ for i in range(n):
                 break
 
 ans = INT_MAX
-seats[(max_j - max_i) // 2] = '1'    
+seats[(max_j + max_i) // 2] = '1'    
 
 for i in range(n):
     if seats[i] == '1':
