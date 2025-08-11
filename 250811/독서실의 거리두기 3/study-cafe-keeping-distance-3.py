@@ -29,7 +29,7 @@ for i in range(n):
             if seats[j] == '1':
               ans = min(ans, j - i)
 
-              break
+            break
 
 
 print(ans)
