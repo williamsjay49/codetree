@@ -37,7 +37,7 @@ if seats[0] == '0':
 if seats[-1] == '0':
     for i in range(N-2, -1, -1):
         if seats[i] == '1':
-            ans = max(ans, N-1 - i)
+            ans = max(ans, N-2 - i)
             break
 
 print(ans)
