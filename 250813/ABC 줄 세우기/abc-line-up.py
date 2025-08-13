@@ -20,10 +20,11 @@ def rearrange():
 if arr == matched:
     print(0)
     sys.exit()
-
-while True:
+Found = True
+while Found:
     rearrange()
     if arr == matched:
+        Found = False
         break
 print(cnt)
         
