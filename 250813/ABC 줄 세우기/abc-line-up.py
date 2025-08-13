@@ -22,11 +22,7 @@ if arr == matched:
     sys.exit()
 
 while True:
-    for elem1, elem2 in zip(arr, matched):
-        if elem1 != elem2:
-            rearrange()
-            break
-
+    rearrange()
     if arr == matched:
         break
 print(cnt)
