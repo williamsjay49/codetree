@@ -1,20 +1,33 @@
+import sys
 n = int(input())
 arr = list(input().split())
 
 # Please write your code here.
-last_cord = ord(arr[-1])
-curr_idx = -1
+matched = [chr(ord("A") + i) for i in range(n)]
 cnt = 0
 
-for i in range(n):
+def rearrange():
+    global cnt
+    for i in range(1, n):
 
-    for j in range(i + 1, n):
-        if ord(arr[i]) + 1 == ord(arr[j]):
-            if j - i != 1:
-                arr[i + 1], arr[j] = arr[j], arr[i + 1]
-
+        for j in range(i + 1, n):
+            if ord(arr[i]) > ord(arr[j]):
+                arr[i], arr[j] = arr[j], arr[i]
                 cnt += 1
+                # print(arr)
             break
 
+if arr == matched:
+    print(0)
+    sys.exit()
+
+while True:
+    for elem1, elem2 in zip(arr, matched):
+        if elem1 != elem2:
+            rearrange()
+            break
+
+    if arr == matched:
+        break
 print(cnt)
         
