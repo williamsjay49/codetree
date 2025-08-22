@@ -5,7 +5,6 @@ a = list(map(int, input().split()))
 min_val = min(a)
 ans = -1
 diff = 101
-cnt = 0
 NO_DUPLICATE = True
 
 for i in range(n):
@@ -16,11 +15,13 @@ for i in range(n):
 
             if diff == a[i] - min_val:
                 NO_DUPLICATE = False
-                break
+            
+            else:
+                NO_DUPLICATE = True
             
             diff = a[i] - min_val
 
-            
+         
     
 if NO_DUPLICATE:
     print(ans)
