@@ -8,6 +8,7 @@ for _ in range(n):
 # Please write your code here.
 score = [0, 0, 0]
 pos = ["A", "B", "C"]
+high = []
 total = 0
 ans = 0
 for i in range(n):
@@ -17,13 +18,15 @@ for i in range(n):
 
     top = max(score)
 
-    for elem in score:
+    for ind, elem in enumerate(score):
         if elem == top:
-            cnt += 1
-    
-    if cnt != total:
+            high.append(pos[ind])
+
+    if total != high:
         ans += 1
-        total = cnt
+        total = high
+    
+    high = []
 
 print(ans)
 
