@@ -34,4 +34,4 @@ elif l_y == b_y:
         print(abs(l_x - b_x) + 1)
     
     else:
-        print(abs(l_x - l_x ) - 1)
+        print(abs(l_x - b_x ) - 1)
